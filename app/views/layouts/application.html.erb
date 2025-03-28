@@ -23,6 +23,13 @@
   </head>
 
   <body>
+  <nav style="display: flex; justify-content: space-between; align-items: end; padding: 0 1rem;">
+  <%= link_to "Cloudmarks", root_path, style: "font-size: 2rem;"  %>
+  <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+  <%= link_to "Login", new_session_path unless authenticated? %>
+  </nav>
+  <main style="padding: 1rem;">
     <%= yield %>
+    </main>
   </body>
 </html>

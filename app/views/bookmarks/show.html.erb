@@ -1,0 +1,12 @@
+<% cache @bookmark do %>
+  <h1><%= @bookmark.name %></h1>
+<% end %>
+
+
+<%= link_to "Back", bookmarks_path %>
+
+<% if authenticated? %>
+    <%= link_to "Edit", edit_bookmark_path(@bookmark) %>
+    <%= button_to "Delete", @bookmark, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<% end %>
+

@@ -1,0 +1,13 @@
+<h1>Bookmarks</h1>
+
+<div id="bookmarks">
+
+<div style="padding: 1rem 0;">
+<%= link_to "New Bookmark", new_bookmark_path if authenticated? %>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1rem;">
+  <% @bookmarks.each do |bookmark| %>
+        <%= link_to bookmark.name, bookmark %>
+  <% end %>
+  </div>
+</div>
